@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/06/07 11:11:44 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/07 16:57:02 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int main( void )
 {
 	/* Throw exception when calling constructor with grade too high */
 	{
+		std::cout << BLUE;
+		std::cout << "Throw exception when calling constructor with grade too high\n" << std::endl;
+		std::cout << WHITE;
 		try
 		{
 			Bureaucrat mike("Mike", 0);
@@ -31,6 +34,9 @@ int main( void )
 
 	/* Throw exception when calling constructor with grade too low */
 	{
+		std::cout << BLUE;
+		std::cout << "Throw exception when calling constructor with grade too low\n" << std::endl;
+		std::cout << WHITE;
 		try
 		{
 			Bureaucrat jim("Jim", 151);
@@ -46,6 +52,9 @@ int main( void )
 	
 	/* Throw exeception when calling upgrade */
 	{	
+		std::cout << BLUE;
+		std::cout << "Throw exeception when calling upgrade\n" << std::endl;
+		std::cout << WHITE;
 		try 
 		{
 			Bureaucrat dur("Dur", 3);
@@ -67,6 +76,9 @@ int main( void )
 
 	/* Throw exeception when calling downgrade */
 	{	
+		std::cout << BLUE;
+		std::cout << "Throw exeception when calling downgrade\n" << std::endl;
+		std::cout << WHITE;
 		try 
 		{
 			Bureaucrat alan("Alan", 149);
@@ -88,6 +100,9 @@ int main( void )
 	
 	/* Throw exception when signed form */
 	{
+		std::cout << BLUE;
+		std::cout << "Throw exception when signed form\n" << std::endl;
+		std::cout << WHITE;
 		try
 		{
 			Bureaucrat	jean("Jean", 1);

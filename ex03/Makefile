@@ -6,23 +6,25 @@
 #    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/09/07 18:19:09 by tgiraudo         ###   ########.fr        #
+#    Updated: 2023/09/08 11:30:02 by tgiraudo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # VARIABLE
 
-NAME			=	Form
+NAME			=	Intern
 
 LIST_SRCS		=	main.cpp					\
 					Bureaucrat.cpp				\
 					Form.cpp					\
+					Intern.cpp					\
 					ShrubberyCreationForm.cpp	\
 					RobotomyRequestForm.cpp		\
 					PresidentialPardonForm.cpp	\
 
 LIST_INCS		=	Bureaucrat.hpp				\
 					Form.hpp					\
+					Intern.hpp					\
 					ShrubberyCreationForm.hpp	\
 					RobotomyRequestForm.hpp		\
 					PresidentialPardonForm.hpp	\
@@ -38,7 +40,7 @@ DIR_INCS		=	includes/
 
 PRINT 			= 	@printf
 
-FLAGS			=	-Wall -Wextra -Werror
+FLAGS			=	-Wall -Wextra -Werror -g3
 
 STD				=	-std=c++98
 
@@ -70,7 +72,7 @@ ${DIR_OBJS}%.o 	:	%.cpp Makefile
 ${NAME}			:	${OBJS} ${INCLUDES}
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 				@${PRINT} "\n${YELLOW}Compiling ${NAME}...${DEFAULT}"
-				@${CC} ${OBJS} -o ${NAME}
+				@${CC} ${OBJS} -o ${NAME} # -fsanitize=address
 				@${PRINT} "\r${GREEN}Compiling ${NAME} : DONE${DEFAULT}\n\n"
 
 all				:	${NAME}

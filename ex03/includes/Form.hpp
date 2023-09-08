@@ -1,53 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 09:27:33 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:19:30 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
+
 
 #include <iostream>
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-# define RESET		"\033[0m"
-# define BLACK		"\033[30m"
-# define RED		"\033[31m"
-# define GREEN		"\033[32m"
-# define YELLOW		"\033[33m"
-# define BLUE		"\033[34m"
-# define MAGENTA	"\033[35m"
-# define CYAN		"\033[36m"
-# define WHITE		"\033[37m"
+class Bureaucrat;
 
-class Form;
-
-class Bureaucrat {
-    private:
-            std::string	_name;
-            int			_grade;
-    public:
+class Form {
+	private:
+			std::string	_name;
+			bool		_is_signed;
+			int			_grade_sign;
+			int			_grade_exec;
+	public:
 			/* Constructors & Destructors */
-            Bureaucrat( void );
-            Bureaucrat( std::string name, int grade );
-            ~Bureaucrat( void );
-            Bureaucrat( const Bureaucrat & );
-            Bureaucrat& operator=( const Bureaucrat &);
-			/* Setters & Getters */
-			const std::string	&getName( void ) const ;
-			const int 			&getGrade( void ) const ;
+			Form( void );
+			Form( std::string name, int grade_sign, int grade_exec );
+			virtual ~Form( void );
+			Form( const Form & );
+			Form& operator=( const Form &);
+			/* Getters */
+			const std::string	&getName( void ) const;
+			const int	&getSignGrade( void ) const ;
+			const int	&getExecGrade( void ) const ;
+			const bool	&getSigned( void ) const ;
 			/* Methods */
-			void	upgrade( void );
-			void	downgrade( void );
-			void	signedForm( Form &form);
-			void	executeForm( Form const & form);
-			/* Class */
+			void	beSigned( Bureaucrat &bureaucrat);
+			void execute(Bureaucrat const & executor ) const;
+			virtual void executeForm(Bureaucrat const & executor ) const = 0;
+			/* Exceptions */
 			class GradeTooHighException: public std::exception {
 				public :
 						virtual const char	*what( void ) const throw();
@@ -66,5 +60,6 @@ class Bureaucrat {
 			};
 };
 
-std::ostream	&operator<<(std::ostream &str, Bureaucrat const &bureaucrat);
+std::ostream	&operator<<(std::ostream &str, Form const &form);
+
 #endif

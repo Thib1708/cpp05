@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/06/07 10:44:08 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/08 09:29:48 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,28 @@ class Form {
 			Form( const Form & );
 			Form& operator=( const Form &);
 			/* Getters */
-			const std::string	&getName( void ) const ;
-			const int	&getGrade( void ) const ;
+			const std::string	&getName( void ) const;
+			const int	&getSignGrade( void ) const ;
+			const int	&getExecGrade( void ) const ;
 			const bool	&getSigned( void ) const ;
 			/* Methods */
 			void	beSigned( Bureaucrat &bureaucrat);
+			void execute(Bureaucrat const & executor ) const;
+			virtual void executeForm(Bureaucrat const & executor ) const = 0;
 			/* Exceptions */
 			class GradeTooHighException: public std::exception {
 				public :
 						virtual const char	*what( void ) const throw();
 			};
 			class GradeTooLowException: public std::exception {
+				public :
+						virtual const char	*what( void ) const throw();
+			};
+			class NotSignedException: public std::exception {
+				public :
+						virtual const char	*what( void ) const throw();
+			};
+			class AlreadySignedException: public std::exception {
 				public :
 						virtual const char	*what( void ) const throw();
 			};
