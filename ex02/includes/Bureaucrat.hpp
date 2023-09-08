@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 09:27:33 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:08:24 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 # define RESET		"\033[0m"
 # define BLACK		"\033[30m"
@@ -26,7 +26,7 @@
 # define CYAN		"\033[36m"
 # define WHITE		"\033[37m"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     private:
@@ -45,8 +45,8 @@ class Bureaucrat {
 			/* Methods */
 			void	upgrade( void );
 			void	downgrade( void );
-			void	signedForm( Form &form);
-			void	executeForm( Form const & form);
+			void	signForm( AForm &form);
+			void	executeForm( AForm const & form);
 			/* Class */
 			class GradeTooHighException: public std::exception {
 				public :

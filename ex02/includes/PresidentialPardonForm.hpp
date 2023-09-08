@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:56:07 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/07 18:18:16 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:06:41 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class PresidentialPardonForm: public Form {
+class PresidentialPardonForm: public AForm {
     private:
         std::string _target;
     public: 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/06/07 10:22:28 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/08 12:49:39 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Bureaucrat::Bureaucrat( void ) {
 	std::cout << "[ BUREAUCRAT ] Constructor called" << std::endl;
+	this->_name = "Lambda";
+	this->_grade = 150;
 	return ;
 }
 
@@ -66,7 +68,7 @@ void	Bureaucrat::downgrade( void ) {
 		throw (Bureaucrat::GradeTooLowException());
 }
 
-void	Bureaucrat::signedForm( Form &form) {
+void	Bureaucrat::signForm( Form &form) {
 	if (form.getSigned())
 	{
 		std::cout << form.getName() << " already signed" << std::endl;

@@ -6,7 +6,7 @@
 #    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/09/07 18:19:09 by tgiraudo         ###   ########.fr        #
+#    Updated: 2023/09/08 13:05:48 by tgiraudo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ NAME			=	Form
 
 LIST_SRCS		=	main.cpp					\
 					Bureaucrat.cpp				\
-					Form.cpp					\
+					AForm.cpp					\
 					ShrubberyCreationForm.cpp	\
 					RobotomyRequestForm.cpp		\
 					PresidentialPardonForm.cpp	\
 
 LIST_INCS		=	Bureaucrat.hpp				\
-					Form.hpp					\
+					AForm.hpp					\
 					ShrubberyCreationForm.hpp	\
 					RobotomyRequestForm.hpp		\
 					PresidentialPardonForm.hpp	\

@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/07 16:57:02 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:43:48 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,11 +115,11 @@ int main( void )
 			std::cout << a1 << std::endl;
 			std::cout << a69 << std::endl;
 			std::cout << a150 << std::endl;
-			jean.signedForm(a1);
-			marcel.signedForm(a69);
-			jean.signedForm(a69);
-			marcel.signedForm(a150);
-			jean.signedForm(a1);
+			jean.signForm(a1);
+			marcel.signForm(a69);
+			jean.signForm(a69);
+			marcel.signForm(a150);
+			jean.signForm(a1);
 		}
 		catch(const std::exception& e)
 		{

@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 09:59:51 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:43:48 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a72 << std::endl;
-			marcel.signedForm(a72);
-			jean.signedForm(a72);
+			marcel.signForm(a72);
+			jean.signForm(a72);
 		}
 		catch(const std::exception& e)
 		{
@@ -139,8 +139,8 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
-			jean.signedForm(a1);
-			marcel.signedForm(a1);
+			jean.signForm(a1);
+			marcel.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)
@@ -161,9 +161,9 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
-			marcel.signedForm(a1);
+			marcel.signForm(a1);
 			jean.executeForm(a1);
-			jean.signedForm(a1);
+			jean.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)
@@ -185,7 +185,7 @@ int main( void )
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
 			jean.executeForm(a1);
-			jean.signedForm(a1);
+			jean.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)
@@ -205,7 +205,7 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
-			jean.signedForm(a1);
+			jean.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)
@@ -225,7 +225,7 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
-			jean.signedForm(a1);
+			jean.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)
@@ -245,7 +245,7 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
-			jean.signedForm(a1);
+			jean.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)
@@ -265,7 +265,7 @@ int main( void )
 			std::cout << jean << std::endl;
 			std::cout << marcel << std::endl;
 			std::cout << a1 << std::endl;
-			jean.signedForm(a1);
+			jean.signForm(a1);
 			jean.executeForm(a1);
 		}
 		catch(const std::exception& e)

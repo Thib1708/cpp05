@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 10:03:26 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:04:49 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Bureaucrat::Bureaucrat( void ) {
 	std::cout << "[ BUREAUCRAT ] Constructor called" << std::endl;
+	this->_name = "lambda";
+	this->_grade = 150;
 	return ;
 }
 
@@ -66,12 +68,12 @@ void	Bureaucrat::downgrade( void ) {
 		throw (Bureaucrat::GradeTooLowException());
 }
 
-void	Bureaucrat::signedForm( Form &form) {
+void	Bureaucrat::signForm( AForm &form) {
 		form.beSigned(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 }
 
-void	Bureaucrat::executeForm( Form const & form) {
+void	Bureaucrat::executeForm( AForm const & form) {
 	if (this->getGrade() > form.getExecGrade())
 		throw(Bureaucrat::GradeTooLowException());
 	else if (form.getSigned() == 0)

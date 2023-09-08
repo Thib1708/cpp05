@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/07 16:54:06 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:43:48 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Bureaucrat {
 			/* Methods */
 			void	upgrade( void );
 			void	downgrade( void );
-			void	signedForm( Form &form);
+			void	signForm( Form &form);
 			/* Class */
 			class GradeTooHighException: public std::exception {
 				public :

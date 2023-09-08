@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 09:30:27 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 12:52:32 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 Form::Form( void ) {
 	std::cout << "[ FORM ] Constructor called" << std::endl;
+	this->_name = "form"
+	this->_is_signed = 0;
+	this->_grade_sign = 150;
+	this->_grade_exec = 150;
 	return ;
 }
 
