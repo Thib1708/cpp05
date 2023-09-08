@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 13:20:18 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:27:41 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat &copy ) {
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat &copy ) {
 	std::cout << "[ BUREAUCRAT ]  Assignement operator called" << std::endl;
-	this->setName(copy.getName());
 	this->_grade = copy._grade;
 	return *this;
 }
