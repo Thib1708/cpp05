@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
+#    By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/09/08 11:30:02 by tgiraudo         ###   ########.fr        #
+#    Updated: 2023/09/11 13:20:11 by thibaultgir      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ NAME			=	Intern
 
 LIST_SRCS		=	main.cpp					\
 					Bureaucrat.cpp				\
-					Form.cpp					\
+					AForm.cpp					\
 					Intern.cpp					\
 					ShrubberyCreationForm.cpp	\
 					RobotomyRequestForm.cpp		\
 					PresidentialPardonForm.cpp	\
 
 LIST_INCS		=	Bureaucrat.hpp				\
-					Form.hpp					\
+					AForm.hpp					\
 					Intern.hpp					\
 					ShrubberyCreationForm.hpp	\
 					RobotomyRequestForm.hpp		\

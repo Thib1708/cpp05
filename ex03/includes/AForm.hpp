@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 11:19:30 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:22:40 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	private:
 			std::string	_name;
 			bool		_is_signed;
@@ -27,11 +27,11 @@ class Form {
 			int			_grade_exec;
 	public:
 			/* Constructors & Destructors */
-			Form( void );
-			Form( std::string name, int grade_sign, int grade_exec );
-			virtual ~Form( void );
-			Form( const Form & );
-			Form& operator=( const Form &);
+			AForm( void );
+			AForm( std::string name, int grade_sign, int grade_exec );
+			virtual ~AForm( void );
+			AForm( const AForm & );
+			AForm& operator=( const AForm &);
 			/* Getters */
 			const std::string	&getName( void ) const;
 			const int	&getSignGrade( void ) const ;
@@ -60,6 +60,6 @@ class Form {
 			};
 };
 
-std::ostream	&operator<<(std::ostream &str, Form const &form);
+std::ostream	&operator<<(std::ostream &str, AForm const &form);
 
 #endif

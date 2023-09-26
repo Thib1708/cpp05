@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 13:24:51 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:54:58 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Bureaucrat {
 			/* Setters & Getters */
 			const std::string	&getName( void ) const ;
 			const int 			&getGrade( void ) const ;
-			void	setName( std::string const name);
 			/* Methods */
 			void	upgrade( void );
 			void	downgrade( void );

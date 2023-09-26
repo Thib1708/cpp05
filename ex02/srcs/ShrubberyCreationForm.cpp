@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:42:11 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/08 09:57:30 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:05:18 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string target ): Form("ShrubberyCreationForm", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm( std::string target ): AForm("ShrubberyCreationForm", 145, 137) {
 	std::cout << "[ SHRUBBERY ] Constructor called" << std::endl;
 	this->_target = target;
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( void ): Form("ShrubberyCreationForm", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm( void ): AForm("ShrubberyCreationForm", 145, 137) {
 	std::cout << "[ SHRUBBERY ] Constructor called" << std::endl;
 	this->_target = "target";
 	return ;
@@ -59,7 +59,7 @@ void ShrubberyCreationForm::executeForm(Bureaucrat const &executor) const {
 
 const char *ShrubberyCreationForm::CantOpenFileException::what(void) const throw()
 {
-	return ("can't open file");
+	return ("the file cannot be opened");
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreationForm &s ) {

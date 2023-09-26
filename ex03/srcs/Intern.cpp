@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 11:32:13 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:25:41 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,19 @@ Intern& Intern::operator=( const Intern &copy ) {
 	return *this;
 }
 
-Form *Intern::makeForm( std::string name, std::string target ) {
+AForm *Intern::makeForm( std::string name, std::string target ) {
 	std::string forms[3][2] = {
 		{"shrubbery", "creation"}, 
 		{"robotomy", "request"}, 
 		{"presidential", "pardon"}
 	};
 
-	Form *createForm[] = {
+	AForm *createForm[] = {
 		new ShrubberyCreationForm(target),
 		new RobotomyRequestForm(target),
 		new PresidentialPardonForm(target)
 	};
 	std::string::size_type pos = 0;
-	std::transform(name.begin(), name.end(), name.begin(), ::tolower);
 	int i;
 	int formIndex = -1;
 	for (i = 0; i < 3; i++)

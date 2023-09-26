@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 11:43:48 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:25:22 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -302,7 +302,7 @@ int main( void )
 		try
 		{
 			Intern tibo;
-			Form *form;
+			AForm *form;
 			form = tibo.makeForm("shrubbery creation", "garden");
 			Bureaucrat	jean("Jean", 1);
 			std::cout << jean << std::endl;
@@ -326,8 +326,8 @@ int main( void )
 		try
 		{
 			Intern tibo;
-			Form *form;
-			form = tibo.makeForm("Robotomy_Request", "Will");
+			AForm *form;
+			form = tibo.makeForm("robotomy_request", "Will");
 			Bureaucrat	jean("Jean", 1);
 			std::cout << jean << std::endl;
 			std::cout << *form << std::endl;
@@ -350,8 +350,8 @@ int main( void )
 		try
 		{
 			Intern tibo;
-			Form *form;
-			form = tibo.makeForm("PresIdenTial-ParDoN", "Will");
+			AForm *form;
+			form = tibo.makeForm("presidential-pardon", "Will");
 			Bureaucrat	jean("Jean", 1);
 			std::cout << jean << std::endl;
 			std::cout << *form << std::endl;
@@ -374,7 +374,7 @@ int main( void )
 		try
 		{
 			Intern tibo;
-			Form *form;
+			AForm *form;
 			form = tibo.makeForm("presidential unknow", "Will");
 			Bureaucrat	jean("Jean", 1);
 			std::cout << jean << std::endl;

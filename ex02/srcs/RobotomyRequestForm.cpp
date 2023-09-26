@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:53:24 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/07 19:06:48 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:00:07 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target ): Form("RobotomyRequestFrom", 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm( std::string target ): AForm("RobotomyRequestFrom", 72, 45) {
 	std::cout << "[ ROBOTOMY ] Constructor called" << std::endl;
 	this->_target = target;
 	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( void ): Form("RobotomyRequestFrom", 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm( void ): AForm("RobotomyRequestFrom", 72, 45) {
 	std::cout << "[ ROBOTOMY ] Constructor called" << std::endl;
 	this->_target = "target";
 	return ;

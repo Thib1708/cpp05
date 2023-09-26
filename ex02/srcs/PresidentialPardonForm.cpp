@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:54:13 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/07 18:25:28 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:00:13 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( std::string target ): Form("Presidenial_Pardon_Form", 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm( std::string target ): AForm("Presidenial_Pardon_Form", 25, 5) {
 	std::cout << "[ PRESIDENTIAL ] Constructor called" << std::endl;
 	this->_target = target;
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( void ): Form("Presidenial_Pardon_Form", 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm( void ): AForm("Presidenial_Pardon_Form", 25, 5) {
 	std::cout << "[ PRESIDENTIAL ] Constructor called" << std::endl;
 	this->_target = "target";
 	return ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:52:16 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/07 19:07:03 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:21:01 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class RobotomyRequestForm: public Form {
+class RobotomyRequestForm: public AForm {
     private:
         std::string _target;
     public: 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 13:27:41 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:54:46 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,6 @@ Bureaucrat& Bureaucrat::operator=( const Bureaucrat &copy ) {
 	std::cout << "[ BUREAUCRAT ]  Assignement operator called" << std::endl;
 	this->_grade = copy._grade;
 	return *this;
-}
-
-void	Bureaucrat::setName( std::string const name) {
-	this->_name = name;
 }
 
 const std::string	&Bureaucrat::getName( void ) const {

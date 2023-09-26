@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 13:04:49 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:18:33 by thibaultgir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,19 +69,31 @@ void	Bureaucrat::downgrade( void ) {
 }
 
 void	Bureaucrat::signForm( AForm &form) {
+	if (form.getSigned())
+	{
+		std::cout << form.getName() << " already signed" << std::endl;
+		return ;
+	}
+	try
+	{
 		form.beSigned(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->_name << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::executeForm( AForm const & form) {
-	if (this->getGrade() > form.getExecGrade())
-		throw(Bureaucrat::GradeTooLowException());
-	else if (form.getSigned() == 0)
-		throw(Bureaucrat::NotSignedException());
-	else
+	try
 	{
+	 	form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
-		form.executeForm(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->_name << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
