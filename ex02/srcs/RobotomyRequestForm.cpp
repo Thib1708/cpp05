@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:53:24 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/11 13:00:07 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/26 17:45:44 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &s ) {
 	return ;
 }
 
-void RobotomyRequestForm::executeForm(Bureaucrat const &executor) const {
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	if (executor.getGrade() > this->getExecGrade())
+		throw(AForm::GradeTooLowException());
+	else if (this->getSigned() == 0)
+		throw(AForm::NotSignedException());
 	srand (time(NULL));
 
 	std::cout << "***drill sound***" << std::endl;

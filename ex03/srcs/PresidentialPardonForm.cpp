@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:54:13 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/26 17:30:44 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:48:29 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPar
 	return *this;
 }
 
-void PresidentialPardonForm::executeForm(Bureaucrat const &executor) const {
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
     (void)executor;
+	if (executor.getGrade() > this->getExecGrade())
+		throw(AForm::GradeTooLowException());
+	else if (this->getSigned() == 0)
+		throw(AForm::NotSignedException());
     std::cout << this->_target << ": you have been pardonned by Zaphod Beeblebrox" << std::endl;
 }

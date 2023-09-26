@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:52:16 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/26 17:30:38 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:49:01 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm: public AForm {
         RobotomyRequestForm( RobotomyRequestForm const &s );
         RobotomyRequestForm &operator=( RobotomyRequestForm const &s );
         ~RobotomyRequestForm( void );
-        void    executeForm( Bureaucrat const &executor ) const;
+        void    execute( Bureaucrat const &executor ) const;
 };
 
 #endif

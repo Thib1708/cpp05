@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:42:11 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/11 13:05:18 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/26 17:45:59 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &s ) {
 	return ;
 }
 
-void ShrubberyCreationForm::executeForm(Bureaucrat const &executor) const {
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+	if (executor.getGrade() > this->getExecGrade())
+		throw(AForm::GradeTooLowException());
+	else if (this->getSigned() == 0)
+		throw(AForm::NotSignedException());
 	std::ofstream file;
 	file.open((this->_target + "_shrubbery").c_str());
 	if (file.fail())

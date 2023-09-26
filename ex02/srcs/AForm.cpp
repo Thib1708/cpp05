@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/26 17:07:59 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:48:04 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,16 +82,6 @@ void	AForm::beSigned( Bureaucrat &bureaucrat) {
 		this->_is_signed = 1;
 	
 }
-
-void AForm::execute(Bureaucrat const & executor ) const {
-	if (executor.getGrade() > this->getExecGrade())
-		throw(AForm::GradeTooLowException());
-	else if (this->_is_signed == 0)
-		throw(AForm::NotSignedException());
-	else
-		this->executeForm(executor);
-}
-
 
 const char *AForm::AlreadySignedException::what(void) const throw()
 {

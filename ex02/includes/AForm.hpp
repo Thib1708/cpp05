@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/26 17:09:48 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:43:14 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ class AForm {
 			const bool	&getSigned( void ) const ;
 			/* Methods */
 			void	beSigned( Bureaucrat &bureaucrat);
-			void execute(Bureaucrat const & executor ) const;
-			virtual void executeForm(Bureaucrat const & executor ) const = 0;
+			// void execute(Bureaucrat const & executor ) const;
+			virtual void execute(Bureaucrat const & executor ) const = 0;
 			/* Exceptions */
 			class GradeTooHighException: public std::exception {
 				public :

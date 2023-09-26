@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:56:07 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/26 17:30:35 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:48:58 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PresidentialPardonForm: public AForm {
         PresidentialPardonForm &operator=( PresidentialPardonForm const &s );
         ~PresidentialPardonForm( void );
         
-        void executeForm(Bureaucrat const & executor ) const;
+        void execute(Bureaucrat const & executor ) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:42:11 by tgiraudo          #+#    #+#             */
-/*   Updated: 2023/09/26 17:30:48 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:48:53 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &s ) {
 	return ;
 }
 
-void ShrubberyCreationForm::executeForm(Bureaucrat const &executor) const {
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+	if (executor.getGrade() > this->getExecGrade())
+		throw(AForm::GradeTooLowException());
+	else if (this->getSigned() == 0)
+		throw(AForm::NotSignedException());
 	std::ofstream file;
 	file.open((this->_target + "_shrubbery").c_str());
 	if (file.fail())
@@ -59,7 +63,7 @@ void ShrubberyCreationForm::executeForm(Bureaucrat const &executor) const {
 
 const char *ShrubberyCreationForm::CantOpenFileException::what(void) const throw()
 {
-	return ("can't open file");
+	return ("the file cannot be opened");
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreationForm &s ) {

@@ -83,16 +83,6 @@ void	AForm::beSigned( Bureaucrat &bureaucrat) {
 	
 }
 
-void AForm::execute(Bureaucrat const & executor ) const {
-	if (executor.getGrade() > this->getExecGrade())
-		throw(AForm::GradeTooLowException());
-	else if (this->_is_signed == 0)
-		throw(AForm::NotSignedException());
-	else
-		this->executeForm(executor);
-}
-
-
 const char *AForm::AlreadySignedException::what(void) const throw()
 {
 	return ("Form is already signed");
