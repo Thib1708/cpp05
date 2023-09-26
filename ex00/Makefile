@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+         #
+#    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/06/06 14:27:30 by thibaultgir      ###   ########.fr        #
+#    Updated: 2023/09/26 17:35:52 by tgiraudo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,13 +54,13 @@ DEFAULT 		=	\033[0m
 
 # RULES
 
-${DIR_OBJS}%.o 	:	%.cpp Makefile
+${DIR_OBJS}%.o 	:	%.cpp Makefile ${INCLUDES}
 				@mkdir -p $(shell dirname $@)
 				@${PRINT} "${YELLOW}${SUPPR}Creating ${NAME}'s objects : $@${DEFAULT}"
 				@${CC} ${FLAGS} ${STD} -c $< -o $@ 
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 
-${NAME}			:	${OBJS} ${INCLUDES}
+${NAME}			:	${OBJS}
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 				@${PRINT} "\n${YELLOW}Compiling ${NAME}...${DEFAULT}"
 				@${CC} ${OBJS} -I ${INCLUDES} -o ${NAME}

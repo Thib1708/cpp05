@@ -6,7 +6,7 @@
 #    By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 11:12:25 by tgiraudo          #+#    #+#              #
-#    Updated: 2023/09/08 13:05:48 by tgiraudo         ###   ########.fr        #
+#    Updated: 2023/09/26 17:36:44 by tgiraudo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,12 +62,12 @@ DEFAULT 		=	\033[0m
 
 # RULES
 
-${DIR_OBJS}%.o 	:	%.cpp Makefile
+${DIR_OBJS}%.o 	:	%.cpp Makefile ${INCLUDES}
 				@mkdir -p $(shell dirname $@)
 				@${PRINT} "${YELLOW}${SUPPR}Creating ${NAME}'s objects : $@${DEFAULT}"
 				@${CC} ${FLAGS} ${STD} -I ${DIR_INCS} -c $< -o $@ 
 
-${NAME}			:	${OBJS} ${INCLUDES}
+${NAME}			:	${OBJS}
 				@${PRINT} "${GREEN}${SUPPR}Creating ${NAME}'s objects : DONE${DEFAULT}"
 				@${PRINT} "\n${YELLOW}Compiling ${NAME}...${DEFAULT}"
 				@${CC} ${OBJS} -o ${NAME}
