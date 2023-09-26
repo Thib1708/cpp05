@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 13:08:05 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:09:48 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ class Bureaucrat;
 
 class AForm {
 	private:
-			std::string	_name;
-			bool		_is_signed;
-			int			_grade_sign;
-			int			_grade_exec;
+			std::string	const	_name;
+			bool				_is_signed;
+			int const 			_grade_sign;
+			int const 			_grade_exec;
 	public:
 			/* Constructors & Destructors */
 			AForm( void );
 			AForm( std::string name, int grade_sign, int grade_exec );
-			~AForm( void );
+			virtual ~AForm( void );
 			AForm( const AForm & );
 			AForm& operator=( const AForm &);
 			/* Getters */

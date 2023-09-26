@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/11 13:22:40 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/26 17:30:32 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 
 #include <iostream>
@@ -21,10 +21,10 @@ class Bureaucrat;
 
 class AForm {
 	private:
-			std::string	_name;
-			bool		_is_signed;
-			int			_grade_sign;
-			int			_grade_exec;
+			std::string	const	_name;
+			bool				_is_signed;
+			int const 			_grade_sign;
+			int const 			_grade_exec;
 	public:
 			/* Constructors & Destructors */
 			AForm( void );

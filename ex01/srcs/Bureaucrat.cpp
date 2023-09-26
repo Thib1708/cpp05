@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 12:49:39 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:47:22 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat( void ) {
 	std::cout << "[ BUREAUCRAT ] Constructor called" << std::endl;
-	this->_name = "Lambda";
+	this->_name = "Joe";
 	this->_grade = 150;
 	return ;
 }

@@ -6,25 +6,25 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 13:03:58 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:00:46 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Form.hpp"
 
-Form::Form( void ) {
+Form::Form( void ): _name("Form"), _grade_sign(150), _grade_exec(150) {
 	std::cout << "[ FORM ] Constructor called" << std::endl;
-	this->_name = "form";
 	this->_is_signed = 0;
-	this->_grade_sign = 150;
-	this->_grade_exec = 150;
 	return ;
 }
 
-Form::Form( std::string name, int grade_sign, int grade_exec ): _name(name), _is_signed(0) {
+Form::Form( std::string name, int grade_sign, int grade_exec ): 
+	_name(name), 
+	_is_signed(0), 
+	_grade_sign(grade_sign),
+ 	_grade_exec(grade_exec) 
+{
 	std::cout << "[ FORM ] Constructor called" << std::endl;
-	this->_grade_sign = grade_sign;
-	this->_grade_exec = grade_exec;
 	if (grade_sign < 1 || grade_exec < 1)
 		throw(Form::GradeTooHighException());
 	if (grade_sign > 150 || grade_exec > 150)
@@ -37,7 +37,12 @@ Form::~Form(void)
 	return ;
 }
 
-Form::Form( const Form &copy ) {
+Form::Form( const Form &copy ):
+	_name(copy.getName()), 
+	_is_signed(copy.getSigned()), 
+	_grade_sign(copy.getSignGrade()),
+ 	_grade_exec(copy.getExecGrade()) 
+{
 	std::cout << "[ FORM ] Copied" << std::endl;
 	*this = copy;
 	return ;
@@ -45,9 +50,7 @@ Form::Form( const Form &copy ) {
 
 Form& Form::operator=( const Form &copy ) {
 	std::cout << "[ FORM ]  Assignement operator called" << std::endl;
-	this->_grade_sign = copy._grade_sign;
 	this->_is_signed = copy._is_signed;
-	this->_name = copy._name;
 	return *this;
 }
 
@@ -55,8 +58,12 @@ const std::string	&Form::getName( void ) const {
 	return this->_name;
 }
 
-const int	&Form::getGrade( void ) const {
+const int	&Form::getSignGrade( void ) const {
 	return this->_grade_sign;
+}
+
+const int	&Form::getExecGrade( void ) const {
+	return this->_grade_exec;
 }
 
 const bool	&Form::getSigned( void ) const {
@@ -83,5 +90,5 @@ const char *Form::GradeTooLowException::what(void) const throw()
 
 std::ostream	&operator<<(std::ostream &str, Form const &form)
 {
-	return (str << form.getName() << ", form grade " << form.getGrade());
+	return (str << form.getName() << ", form grade " << form.getSignGrade());
 }

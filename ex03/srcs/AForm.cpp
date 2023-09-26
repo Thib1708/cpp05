@@ -10,21 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AForm.hpp"
+#include "AForm.hpp"
 
-AForm::AForm( void ) {
-	std::cout << "[ AFORM ] Constructor called" << std::endl;
-	this->_name = "Aform";
+AForm::AForm( void ):
+	_name("Form"),
+	_grade_sign(150),
+	_grade_exec(150)
+{
+	std::cout << "[ FORM ] Constructor called" << std::endl;
 	this->_is_signed = 0;
-	this->_grade_sign = 150;
-	this->_grade_exec = 150;
 	return ;
 }
 
-AForm::AForm( std::string name, int grade_sign, int grade_exec ): _name(name), _is_signed(0) {
-	std::cout << "[ AFORM ] Constructor called" << std::endl;
-	this->_grade_sign = grade_sign;
-	this->_grade_exec = grade_exec;
+AForm::AForm( std::string name, int grade_sign, int grade_exec ): 
+	_name(name),
+	_is_signed(0),
+	_grade_sign(grade_sign),
+	_grade_exec(grade_exec)
+	 {
+	std::cout << "[ FORM ] Constructor called" << std::endl;
 	if (grade_sign < 1 || grade_exec < 1)
 		throw(AForm::GradeTooHighException());
 	if (grade_sign > 150 || grade_exec > 150)
@@ -33,21 +37,23 @@ AForm::AForm( std::string name, int grade_sign, int grade_exec ): _name(name), _
 }
 AForm::~AForm(void)
 {
-	std::cout << "[ AFORM ] Destructor called" << std::endl;
+	std::cout << "[ FORM ] Destructor called" << std::endl;
 	return ;
 }
 
-AForm::AForm( const AForm &copy ) {
-	std::cout << "[ AFORM ] Copied" << std::endl;
-	*this = copy;
+AForm::AForm( const AForm &copy ):
+	_name(copy.getName()),
+	_is_signed(copy.getSigned()),
+	_grade_sign(copy.getSignGrade()),
+	_grade_exec(copy.getExecGrade())
+	{
+	std::cout << "[ FORM ] Copied" << std::endl;
 	return ;
 }
 
 AForm& AForm::operator=( const AForm &copy ) {
-	std::cout << "[ AFORM ]  Assignement operator called" << std::endl;
-	this->_grade_sign = copy._grade_sign;
+	std::cout << "[ FORM ]  Assignement operator called" << std::endl;
 	this->_is_signed = copy._is_signed;
-	this->_name = copy._name;
 	return *this;
 }
 
@@ -89,7 +95,7 @@ void AForm::execute(Bureaucrat const & executor ) const {
 
 const char *AForm::AlreadySignedException::what(void) const throw()
 {
-	return ("AForm is already signed");
+	return ("Form is already signed");
 }
 
 const char *AForm::GradeTooHighException::what(void) const throw()
@@ -104,7 +110,7 @@ const char *AForm::GradeTooLowException::what(void) const throw()
 
 const char *AForm::NotSignedException::what(void) const throw()
 {
-	return ("form is not signed");
+	return ("Form is not signed");
 }
 
 std::ostream	&operator<<(std::ostream &str, AForm const &form)

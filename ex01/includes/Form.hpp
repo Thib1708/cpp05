@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/06/07 10:44:08 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/26 17:00:35 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Bureaucrat;
 
 class Form {
 	private:
-			std::string	_name;
+			std::string	const _name;
 			bool		_is_signed;
-			int			_grade_sign;
-			int			_grade_exec;
+			int			const _grade_sign;
+			int			const _grade_exec;
 	public:
 			/* Constructors & Destructors */
 			Form( void );
@@ -33,8 +33,9 @@ class Form {
 			Form( const Form & );
 			Form& operator=( const Form &);
 			/* Getters */
-			const std::string	&getName( void ) const ;
-			const int	&getGrade( void ) const ;
+			const std::string	&getName( void ) const;
+			const int	&getSignGrade( void ) const ;
+			const int	&getExecGrade( void ) const ;
 			const bool	&getSigned( void ) const ;
 			/* Methods */
 			void	beSigned( Bureaucrat &bureaucrat);

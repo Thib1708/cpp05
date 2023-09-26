@@ -3,28 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/11 12:58:09 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/26 17:07:59 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm( void ) {
+AForm::AForm( void ):
+	_name("Form"),
+	_grade_sign(150),
+	_grade_exec(150)
+{
 	std::cout << "[ FORM ] Constructor called" << std::endl;
-	this->_name = "form";
 	this->_is_signed = 0;
-	this->_grade_sign = 150;
-	this->_grade_exec = 150;
 	return ;
 }
 
-AForm::AForm( std::string name, int grade_sign, int grade_exec ): _name(name), _is_signed(0) {
+AForm::AForm( std::string name, int grade_sign, int grade_exec ): 
+	_name(name),
+	_is_signed(0),
+	_grade_sign(grade_sign),
+	_grade_exec(grade_exec)
+	 {
 	std::cout << "[ FORM ] Constructor called" << std::endl;
-	this->_grade_sign = grade_sign;
-	this->_grade_exec = grade_exec;
 	if (grade_sign < 1 || grade_exec < 1)
 		throw(AForm::GradeTooHighException());
 	if (grade_sign > 150 || grade_exec > 150)
@@ -37,17 +41,19 @@ AForm::~AForm(void)
 	return ;
 }
 
-AForm::AForm( const AForm &copy ) {
+AForm::AForm( const AForm &copy ):
+	_name(copy.getName()),
+	_is_signed(copy.getSigned()),
+	_grade_sign(copy.getSignGrade()),
+	_grade_exec(copy.getExecGrade())
+	{
 	std::cout << "[ FORM ] Copied" << std::endl;
-	*this = copy;
 	return ;
 }
 
 AForm& AForm::operator=( const AForm &copy ) {
 	std::cout << "[ FORM ]  Assignement operator called" << std::endl;
-	this->_grade_sign = copy._grade_sign;
 	this->_is_signed = copy._is_signed;
-	this->_name = copy._name;
 	return *this;
 }
 
