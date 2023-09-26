@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/26 17:00:46 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:57:07 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,5 @@ const char *Form::GradeTooLowException::what(void) const throw()
 
 std::ostream	&operator<<(std::ostream &str, Form const &form)
 {
-	return (str << form.getName() << ", form grade " << form.getSignGrade());
+	return (str << form.getName() << ", form signing grade " << form.getSignGrade() << ", executing grade " << form.getExecGrade());
 }

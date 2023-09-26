@@ -6,7 +6,7 @@
 /*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:43:44 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/08 11:43:48 by tgiraudo         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:58:42 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,9 @@ int main( void )
 		}
 		
 	}
+	
+	std::cout << "\n --------------------- \n\n";
+	
 	{
 		std::cout << BLUE;
 		std::cout << "Throw exception when executing form\n" << std::endl;
@@ -172,6 +175,9 @@ int main( void )
 		}
 		
 	}
+	
+	std::cout << "\n --------------------- \n\n";
+	
 	{
 		std::cout << BLUE;
 		std::cout << "Throw exception when executing form not signed\n" << std::endl;
@@ -193,6 +199,9 @@ int main( void )
 			std::cerr << e.what() << '\n';
 		}
 	}
+	
+	std::cout << "\n --------------------- \n\n";
+	
 	{
 		std::cout << BLUE;
 		std::cout << "Throw exception if the file can't be opened \n" << std::endl;
@@ -213,6 +222,9 @@ int main( void )
 			std::cerr << e.what() << '\n';
 		}
 	}
+	
+	std::cout << "\n --------------------- \n\n";
+	
 	{
 		std::cout << BLUE;
 		std::cout << "Executing ShrubberyCreationForm\n" << std::endl;
@@ -233,6 +245,9 @@ int main( void )
 			std::cerr << e.what() << '\n';
 		}
 	}
+	
+	std::cout << "\n --------------------- \n\n";
+	
 	{
 		std::cout << BLUE;
 		std::cout << "Executing RobotomyRequestForm\n" << std::endl;
@@ -253,6 +268,9 @@ int main( void )
 			std::cerr << e.what() << '\n';
 		}
 	}
+	
+	std::cout << "\n --------------------- \n\n";
+	
 	{
 		std::cout << BLUE;
 		std::cout << "Executing PresidentialPardonForm\n" << std::endl;
